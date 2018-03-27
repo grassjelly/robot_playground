@@ -13,12 +13,15 @@ On Kinetic, follow the instructions [here](https://gist.github.com/grassjelly/2a
 
 ## Simulation
 
-### Running the virtual robot and Gazebo World:
+Running the virtual robot and Gazebo World:
+
     roslaunch robot_playground bringup_sim.launch
 
-### Running gmapping demo:
+Running gmapping demo:
+
     roslaunch robot_playground slam.launch
 
-### Running autonomous navigation:
+Running autonomous navigation:
+
     roslaunch robot_playground navigate.launch
 
