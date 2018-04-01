@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+set -e
+
+ROSVERSION=$(rosversion -d)
+
+if [ $ROSVERSION != "indigo" ] && [ $ROSVERSION != "kinetic" ] 
+    then
+        echo "Your version of ROS is not supported. Exiting now!"
+        exit 1
+fi
+
+sudo apt-get install -y ros-$ROSVERSION-robot-localization 
+sudo apt-get install -y ros-$ROSVERSION-controller-manager 
+sudo apt-get install -y ros-$ROSVERSION-joint-state-controller 
+sudo apt-get install -y ros-$ROSVERSION-diff-drive-controller 
+sudo apt-get install -y ros-$ROSVERSION-gazebo-ros 
+sudo apt-get install -y ros-$ROSVERSION-gazebo-ros-control 
+sudo apt-get install -y ros-$ROSVERSION-gazebo-plugins       
+sudo apt-get install -y ros-$ROSVERSION-lms1xx 
+sudo apt-get install -y ros-$ROSVERSION-pointgrey-camera-description 
+sudo apt-get install -y ros-$ROSVERSION-roslint 
+sudo apt-get install -y ros-$ROSVERSION-amcl 
+sudo apt-get install -y ros-$ROSVERSION-gmapping      
+sudo apt-get install -y ros-$ROSVERSION-map-server 
+sudo apt-get install -y ros-$ROSVERSION-move-base 
+sudo apt-get install -y ros-$ROSVERSION-urdf 
+sudo apt-get install -y ros-$ROSVERSION-xacro 
+sudo apt-get install -y ros-$ROSVERSION-message-runtime 
+sudo apt-get install -y ros-$ROSVERSION-topic-tools 
+sudo apt-get install -y ros-$ROSVERSION-teleop-twist-joy
+
+echo "All dependencies installed!"
