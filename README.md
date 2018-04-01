@@ -36,3 +36,7 @@ Running autonomous navigation:
 
     roslaunch linorobot navigate.launch
 
+
+## Navigation Stack Tuning
+
+If you're using this playground to tune your parameters, [here's](http://kaiyuzheng.me/documents/navguide.pdf) a comprehensive tuning guide.
