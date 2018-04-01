@@ -3,13 +3,24 @@
 
 ## Installation
 
-Install Jackal's simulation package.
+### Install dependencies
 
-On Indigo:
+    ./installdep
 
-    sudo apt-get install ros-indigo-jackal-simulator ros-indigo-jackal-desktop
+### Create workspace and clone sources
 
-On Kinetic, follow the instructions [here](https://gist.github.com/grassjelly/2aaf4bba739852616f37e1599db12464).
+    mkdir -p playground_ws/src
+    cd playground_ws/src
+    catkin_init_workspace
+
+    git clone https://github.com/grassjelly/jackal.git
+    git clone https://github.com/jackal/jackal_simulator.git
+    git clone https://github.com/jackal/jackal_desktop.git
+    git clone https://github.com/ros-visualization/interactive_marker_twist_server.git
+
+    cd ../
+    catkin_make
+    source devel/setup.bash
 
 ## Simulation
 
@@ -19,9 +30,9 @@ Running the virtual robot and Gazebo World:
 
 Running gmapping demo:
 
-    roslaunch robot_playground slam.launch
+    roslaunch linorobot slam.launch
 
 Running autonomous navigation:
 
-    roslaunch robot_playground navigate.launch
+    roslaunch linorobot navigate.launch
 
