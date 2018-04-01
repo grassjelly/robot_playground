@@ -12,15 +12,13 @@ A forked [verion](https://github.com/grassjelly/jackal) of Jackal is used so tha
 
 ## Installation
 
-### Install dependencies
+### Install dependencies:
 
     ./installdep
 
-### Create workspace and clone sources
+### Clone Jackal's and playground's sources on your linorobot_ws:
 
-    mkdir -p playground_ws/src
-    cd playground_ws/src
-    catkin_init_workspace
+    cd linorobot_ws/src
 
     git clone https://github.com/grassjelly/jackal.git
     git clone https://github.com/jackal/jackal_simulator.git
@@ -31,11 +29,16 @@ A forked [verion](https://github.com/grassjelly/jackal) of Jackal is used so tha
     catkin_make
     source devel/setup.bash
 
+
+Credits to vfdev-5's Jackal [installation](https://gist.github.com/vfdev-5/57a0171d8f5697831dc8d374839bca12).
+
 ## Simulation
 
 Running the virtual robot and Gazebo World:
 
     roslaunch robot_playground bringup_sim.launch
+
+Once Jackal's simulation is up, you can run Linorobot's gmapping and autonomous navigation launch files as per normal.
 
 Running gmapping demo:
 
@@ -48,4 +51,8 @@ Running autonomous navigation:
 
 ## Navigation Stack Tuning
 
-If you're using this playground to tune your parameters, [here's](http://kaiyuzheng.me/documents/navguide.pdf) a comprehensive tuning guide.
+Some useful resources to tune your parameters:
+
+-  [Kaiyu Zheng's](http://kaiyuzheng.me/documents/navguide.pdf) - very comprehensive guide
+
+- [ROS'](http://wiki.ros.org/navigation/Tutorials/Navigation%20Tuning%20Guide) - high level description of each parameter
