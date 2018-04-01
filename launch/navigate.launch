@@ -1,12 +1,3 @@
 <launch>
-    <!-- Map server -->
-    <arg name="map_file" default="$(find robot_playground)/maps/map.yaml"/>
-    <node pkg="map_server" name="map_server"  type="map_server" args="$(arg map_file)" />
-
-    <!-- AMCL used for localization -->
-    <include file="$(find robot_playground)/launch/amcl.launch" />
-    
-    <!-- Calls navigation stack packages for compatible Linorobto base -->
-    <!-- Takes reference from env variable LINOBASE. ie. export LINOBASE=2wd -->
-    <include file="$(find robot_playground)/launch/move_base/move_base_$(env LINOBASE).launch" />
+    <include file="$(find linorobot)/launch/navigate.launch" />
 </launch>
