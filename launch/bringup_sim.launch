@@ -2,6 +2,4 @@
     <include file="$(find jackal_gazebo)/launch/jackal_world.launch">
         <arg name="config" value="front_laser"/>
     </include>
-
-    <!-- <remap from="front/scan" to="scan"/> -->
 </launch>
