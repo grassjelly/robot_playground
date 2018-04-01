@@ -3,5 +3,5 @@
         <arg name="config" value="front_laser"/>
     </include>
 
-    <remap from="front/scan" to="scan"/>
+    <!-- <remap from="front/scan" to="scan"/> -->
 </launch>
