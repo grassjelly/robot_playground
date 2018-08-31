@@ -3,7 +3,7 @@
 
 This package creates a shim to Jackal's Gazebo simulator so you can run a virtual robot on Gazebo and try Linorobot's Navigation Stack parameters.
 
-A forked [verion](https://github.com/grassjelly/jackal) of Jackal is used so that the frames and topics on the virtual robot match Linorobot's. You can check out the following commits to see what changes have been made to make Jackal and Linorobot compatible.
+A forked [version](https://github.com/grassjelly/jackal) of Jackal is used so that the frames and topics on the virtual robot match Linorobot's. You can check out the following commits to see what changes have been made to make Jackal and Linorobot compatible.
 
 - [remapping of Laser's 'front/scan' topic to 'scan' topic](https://github.com/grassjelly/jackal/commit/edf8c5cf8bd3ab2648ed4a37824995f624ee5ce2)
 - [remapping of Laser's 'front_laser' frame to 'laser frame'](https://github.com/grassjelly/jackal/commit/505f6c324f3fcbdd11de7414aac37039dc8d8aa9)
@@ -19,12 +19,12 @@ A forked [verion](https://github.com/grassjelly/jackal) of Jackal is used so tha
 ### Clone Jackal's and playground's sources on your linorobot_ws:
 
     cd linorobot_ws/src
-
+    
     git clone https://github.com/grassjelly/jackal.git
     git clone https://github.com/jackal/jackal_simulator.git
     git clone https://github.com/jackal/jackal_desktop.git
     git clone https://github.com/ros-visualization/interactive_marker_twist_server.git
-
+    
     cd ../
     catkin_make
     source devel/setup.bash
