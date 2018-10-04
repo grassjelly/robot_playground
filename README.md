@@ -18,7 +18,7 @@ A forked [version](https://github.com/grassjelly/jackal) of Jackal is used so th
 
 ### Clone Jackal's and playground's sources on your linorobot_ws:
 
-    cd linorobot_ws/src
+    cd ~/linorobot_ws/src
     
     git clone https://github.com/grassjelly/jackal.git
     git clone https://github.com/jackal/jackal_simulator.git
