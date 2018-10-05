@@ -29,5 +29,6 @@ sudo apt-get install -y ros-$ROSVERSION-xacro
 sudo apt-get install -y ros-$ROSVERSION-message-runtime 
 sudo apt-get install -y ros-$ROSVERSION-topic-tools 
 sudo apt-get install -y ros-$ROSVERSION-teleop-twist-joy
+sudo apt-get install -y ros-$ROSVERSION-robot-state-publisher
 
 echo "All dependencies installed!"
