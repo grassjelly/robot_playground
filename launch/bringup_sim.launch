@@ -1,6 +1,8 @@
 <launch>
     <include file="$(find jackal_gazebo)/launch/jackal_world.launch">
-        <arg name="config" value="front_laser"/>
+        <!-- <arg name="config" value="front_laser"/> -->
+        <!-- <arg name="config" value="kinect"/> -->
+        <arg name="config" value="hybrid"/>
     </include>
 
     <!-- Publish static transform from base_footprint to base_link -->

@@ -18,7 +18,7 @@ A forked [version](https://github.com/grassjelly/jackal) of Jackal is used so th
 
 ### Clone Jackal's and playground's sources on your linorobot_ws:
 
-    cd linorobot_ws/src
+    cd ~/linorobot_ws/src
     
     git clone https://github.com/grassjelly/jackal.git
     git clone https://github.com/jackal/jackal_simulator.git
@@ -33,6 +33,7 @@ A forked [version](https://github.com/grassjelly/jackal) of Jackal is used so th
 Credits to vfdev-5's Jackal [installation](https://gist.github.com/vfdev-5/57a0171d8f5697831dc8d374839bca12).
 
 ## Simulation
+You can change the sensors used by uncommenting the sensors you need in bringup_sim.launch.
 
 Running the virtual robot and Gazebo World:
 
