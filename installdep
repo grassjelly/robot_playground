@@ -32,5 +32,7 @@ sudo apt-get install -y ros-$ROSVERSION-teleop-twist-joy
 sudo apt-get install -y ros-$ROSVERSION-robot-state-publisher
 sudo apt-get install -y ros-$ROSVERSION-topic-tools
 sudo apt-get install -y ros-$ROSVERSION-image-proc
+sudo apt-get install -y ros-$ROSVERSION-pointgrey-camera-description
+sudo apt-get install -y ros-$ROSVERSION-lms1xx
 
 echo "All dependencies installed!"
