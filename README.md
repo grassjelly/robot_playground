@@ -5,6 +5,7 @@ This package creates a shim to Jackal's Gazebo simulator so you can run a virtua
 
 A forked [version](https://github.com/grassjelly/jackal) of Jackal is used so that the frames and topics on the virtual robot match Linorobot's. You can check out the following commits to see what changes have been made to make Jackal and Linorobot compatible.
 
+- [remapping of Odometry topic 'odometry/filtered' to 'odometry'](https://github.com/grassjelly/jackal/commit/572e1122267e4a6550909229c9dff9a55729a064)
 - [remapping of Laser's 'front/scan' topic to 'scan' topic](https://github.com/grassjelly/jackal/commit/edf8c5cf8bd3ab2648ed4a37824995f624ee5ce2)
 - [remapping of Laser's 'front_laser' frame to 'laser frame'](https://github.com/grassjelly/jackal/commit/505f6c324f3fcbdd11de7414aac37039dc8d8aa9)
 - [remapping of Base's 'base_link' frame to 'base_footprint frame'](https://github.com/grassjelly/jackal/commit/6aaabba108f841097a35dd87aecfaf8b6b8d8be9)
