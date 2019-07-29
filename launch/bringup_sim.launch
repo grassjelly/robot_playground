@@ -1,6 +1,7 @@
 <launch>
     <!-- <arg name="config" value="front_laser"/> -->
     <!-- <arg name="config" value="kinect"/> -->
+    <!-- <arg name="config" value="velodyne"/> -->
     <arg name="config" value="hybrid"/>
 
     <arg name="use_sim_time" default="true" />
