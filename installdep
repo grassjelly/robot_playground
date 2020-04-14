@@ -6,8 +6,10 @@ ROSVERSION=$(rosversion -d)
 
 if [ $ROSVERSION != "indigo" ] && [ $ROSVERSION != "kinetic" ] 
     then
-        echo "Your version of ROS is not supported. Exiting now!"
-        exit 1
+        git clone https://github.com/ros-drivers/pointgrey_camera_driver ../pointgrey_camera_driver
+
+else
+    sudo apt-get install -y ros-$ROSVERSION-pointgrey-camera-description 
 fi
 
 sudo apt-get install -y ros-$ROSVERSION-robot-localization 
@@ -18,7 +20,6 @@ sudo apt-get install -y ros-$ROSVERSION-gazebo-ros
 sudo apt-get install -y ros-$ROSVERSION-gazebo-ros-control 
 sudo apt-get install -y ros-$ROSVERSION-gazebo-plugins       
 sudo apt-get install -y ros-$ROSVERSION-lms1xx 
-sudo apt-get install -y ros-$ROSVERSION-pointgrey-camera-description 
 sudo apt-get install -y ros-$ROSVERSION-roslint 
 sudo apt-get install -y ros-$ROSVERSION-amcl 
 sudo apt-get install -y ros-$ROSVERSION-gmapping      
@@ -32,7 +33,6 @@ sudo apt-get install -y ros-$ROSVERSION-teleop-twist-joy
 sudo apt-get install -y ros-$ROSVERSION-robot-state-publisher
 sudo apt-get install -y ros-$ROSVERSION-topic-tools
 sudo apt-get install -y ros-$ROSVERSION-image-proc
-sudo apt-get install -y ros-$ROSVERSION-pointgrey-camera-description
 sudo apt-get install -y ros-$ROSVERSION-lms1xx
 sudo apt-get install -y ros-$ROSVERSION-velodyne-*
 
