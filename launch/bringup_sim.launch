@@ -1,9 +1,9 @@
 <launch>
-    <!-- <arg name="config" value="front_laser"/> -->
-    <!-- <arg name="config" value="kinect"/> -->
-    <!-- <arg name="config" value="velodyne"/> -->
-    <!-- <arg name="config" value="pan_tilt"/> -->
-    <arg name="config" value="hybrid"/>
+    <!-- <arg name="config" default="front_laser"/> -->
+    <!-- <arg name="config" default="kinect"/> -->
+    <!-- <arg name="config" default="velodyne"/> -->
+    <!-- <arg name="config" default="pan_tilt"/> -->
+    <arg name="config" default="hybrid"/>
 
     <arg name="use_sim_time" default="true" />
     <arg name="gui" default="true" />
@@ -19,20 +19,26 @@
         <arg name="world_name" value="$(arg world_name)" />
     </include>
 
-    <!-- Load Jackal's description, controllers, and teleop nodes. -->
-    <include file="$(find jackal_description)/launch/description.launch">
+    <include file="$(find robot_playground)/launch/spawn_robot.launch">
         <arg name="config" value="$(arg config)" />
     </include>
 
-    <include file="$(find jackal_control)/launch/control.launch" />
-    
-    <include file="$(find jackal_control)/launch/teleop.launch">
-        <arg name="joystick" value="false"/>
-    </include>
+    <!-- Multi-Spawn Examples -->
+    <!-- <group ns="robot1">
+        <include file="$(find robot_playground)/launch/spawn_robot.launch">
+            <arg name="config" value="front_laser" />
+            <arg name="robot_name" value="robot1"/>
+            <arg name="pos_x" value="0.0"/>
+            <arg name="pos_y" value="0.0"/>
+        </include>
+    </group>
 
-    <!-- Spawn Jackal -->
-    <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model"
-            args="-urdf -model jackal -param robot_description -x 0 -y 0 -z 1.0" />
-    <!-- Publish static transform from base_footprint to base_link -->
-    <node pkg="tf" type="static_transform_publisher" name="base_footprint_to_base_link" args="0 0 0.098 0 0 0  /base_footprint /base_link  100"/>
+   <group ns="robot2">
+        <include file="$(find robot_playground)/launch/spawn_robot.launch">
+            <arg name="config" value="front_laser" />
+            <arg name="robot_name" value="robot2"/>
+            <arg name="pos_x" value="1.0"/>
+            <arg name="pos_y" value="0.0"/>
+        </include>
+    </group> -->
 </launch>
