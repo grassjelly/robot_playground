@@ -1,9 +1,9 @@
 <launch>
-    <!-- <arg name="config" default="front_laser"/> -->
+    <arg name="config" default="front_laser"/>
     <!-- <arg name="config" default="kinect"/> -->
     <!-- <arg name="config" default="velodyne"/> -->
     <!-- <arg name="config" default="pan_tilt"/> -->
-    <arg name="config" default="hybrid"/>
+    <!-- <arg name="config" default="hybrid"/> -->
 
     <arg name="use_sim_time" default="true" />
     <arg name="gui" default="true" />
@@ -24,21 +24,17 @@
     </include>
 
     <!-- Multi-Spawn Examples -->
-    <!-- <group ns="robot1">
-        <include file="$(find robot_playground)/launch/spawn_robot.launch">
-            <arg name="config" value="front_laser" />
-            <arg name="robot_name" value="robot1"/>
-            <arg name="pos_x" value="0.0"/>
-            <arg name="pos_y" value="0.0"/>
-        </include>
-    </group>
+    <!-- <include file="$(find robot_playground)/launch/spawn_robot.launch">
+        <arg name="config" value="front_laser" />
+        <arg name="robot_name" value="robot1"/>
+        <arg name="pos_x" value="0.0"/>
+        <arg name="pos_y" value="0.0"/>
+    </include>
 
-   <group ns="robot2">
-        <include file="$(find robot_playground)/launch/spawn_robot.launch">
-            <arg name="config" value="front_laser" />
-            <arg name="robot_name" value="robot2"/>
-            <arg name="pos_x" value="1.0"/>
-            <arg name="pos_y" value="0.0"/>
-        </include>
-    </group> -->
+    <include file="$(find robot_playground)/launch/spawn_robot.launch">
+        <arg name="config" value="front_laser" />
+        <arg name="robot_name" value="robot2"/>
+        <arg name="pos_x" value="0.0"/>
+        <arg name="pos_y" value="-3.0"/>
+    </include> -->
 </launch>
