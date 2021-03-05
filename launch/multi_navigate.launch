@@ -1,7 +1,9 @@
 <launch>
     <arg name="robot_name" default="/"/>
     <arg name="rviz"       default="false"/>
-    
+    <arg name="pos_x"      default="0.0" />
+    <arg name="pos_y"      default="0.0" />
+
     <arg if="$(eval arg('robot_name') == '/')"  name="frame_prefix" value="" />
     <arg unless="$(eval arg('robot_name') == '/')" name="frame_prefix" value="$(arg robot_name)/" />
 
@@ -14,7 +16,9 @@
 
         <!-- AMCL used for localization -->
         <include file="$(find robot_playground)/launch/multi/navigation/amcl.launch">
-            <arg name="frame_prefix" value="$(arg frame_prefix)"/>
+            <arg name="initial_pose_x" value="$(arg pos_x)"/>
+            <arg name="initial_pose_y" value="$(arg pos_y)"/>
+            <arg name="frame_prefix"   value="$(arg frame_prefix)"/>
         </include>
         
         <!-- Calls navigation stack packages -->
@@ -22,5 +26,13 @@
             <arg name="frame_prefix" value="$(arg frame_prefix)"/>
             <arg name="robot_name"   value="$(arg robot_name)"/>
         </include>
+
+        <node pkg="robot_pose_publisher" name="robot_pose_publisher" type="robot_pose_publisher" >
+            <param name="publish_frequency" value="1" />
+            <param name="is_stamped" value="true" />
+        </node>
+
+        <node pkg="traffic_interface" name="status_relay" type="status_relay.py" />
+        <node pkg="traffic_interface" name="goal_relay" type="goal_relay.py" />
     </group>
 </launch>
