@@ -26,13 +26,4 @@
             <arg name="frame_prefix" value="$(arg frame_prefix)"/>
             <arg name="robot_name"   value="$(arg robot_name)"/>
         </include>
-
-        <node pkg="robot_pose_publisher" name="robot_pose_publisher" type="robot_pose_publisher" >
-            <param name="publish_frequency" value="1" />
-            <param name="is_stamped" value="true" />
-        </node>
-
-        <node pkg="traffic_interface" name="status_relay" type="status_relay.py" />
-        <node pkg="traffic_interface" name="goal_relay" type="goal_relay.py" />
-    </group>
 </launch>
