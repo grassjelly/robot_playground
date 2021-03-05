@@ -1,8 +1,13 @@
 <launch>
     <arg name="frame_prefix" default=""/>
+    <arg name="initial_pose_x" default="0.0"/>
+    <arg name="initial_pose_y" default="0.0"/>
 
     <node pkg="amcl" type="amcl" name="amcl" output="screen">
         <param name="initial_pose_a" value="0.0"/>
+        <param name="initial_pose_x" value="$(arg initial_pose_x)"/>
+        <param name="initial_pose_y" value="$(arg initial_pose_y)"/>
+
         <param name="use_map_topic" value="true"/>
         <param name="base_frame_id" value="$(arg frame_prefix)base_footprint"/>
         <param name="odom_frame_id" value="$(arg frame_prefix)odom"/>
