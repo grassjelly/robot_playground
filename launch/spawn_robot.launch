@@ -28,7 +28,6 @@
         </include>
 
         <include file="$(find jackal_control)/launch/control.launch" >
-            <param name="config" value="$(arg config)" />
             <arg name="frame_prefix" value="$(arg frame_prefix)" />
         </include>
 
