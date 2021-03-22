@@ -6,18 +6,18 @@
     <arg unless="$(eval arg('robot_name') == '/')" name="frame_prefix" value="$(arg robot_name)/" />
 
     <group ns="$(arg robot_name)">
-        <include file="$(find champ_config)/launch/include/gmapping.launch">
+        <include file="$(find robot_playground)/launch/multi/slam/gmapping.launch">
             <arg name="frame_prefix" value="$(arg frame_prefix)"/>
         </include>
 
         <!-- Calls navigation stack packages -->
-        <include file="$(find champ_config)/launch/include/move_base.launch">
+        <include file="$(find robot_playground)/launch/multi/navigation/move_base.launch">
             <arg name="frame_prefix" value="$(arg frame_prefix)"/>
             <arg name="robot_name"   value="$(arg robot_name)"/>
         </include>
 
         <node if="$(arg rviz)" name="rviz" pkg="rviz" type="rviz"
-            args="-d $(find champ_navigation)/rviz/navigate.rviz -f $(arg frame_prefix)map"
+            args="-d $(find robot_playground)/launch/nav.rviz -f $(arg frame_prefix)map"
             output="screen"/>
     </group>
 </launch>
